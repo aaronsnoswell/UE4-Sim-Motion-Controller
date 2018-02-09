@@ -5,21 +5,10 @@ using System.Collections.Generic;
 
 public class SimMotionControllerTarget : TargetRules
 {
-	public SimMotionControllerTarget(TargetInfo Target)
+	public SimMotionControllerTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-	}
 
-	//
-	// TargetRules interface.
-	//
-
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
-	{
-		OutExtraModuleNames.AddRange( new string[] { "SimMotionController" } );
+		ExtraModuleNames.AddRange( new string[] { "SimMotionController" } );
 	}
 }
